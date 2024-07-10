@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Container Info</title>
+</head>
+<body>
+    <h1>Container Info</h1>
+    <p>The IP address of this container is: <b id="ip-address">Loading...</b></p>
+    <p>Metrics:</p>
+    <pre id="metrics">Loading...</pre>
+    <script>
+        fetch('/ip').then(response => response.text()).then(data => {
+            document.getElementById('ip-address').innerText = data;
+        });
+        fetch('/metrics').then(response => response.text()).then(data => {
+            document.getElementById('metrics').innerText = data;
+        });
+    </script>
+</body>
+</html>
