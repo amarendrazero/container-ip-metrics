@@ -11,6 +11,8 @@ Create an index.html file that will display the IP address and system metrics of
 *Step3. Create a Shell Script to Get IP Address and Metrics (collect_metrics.sh)
 Create a shell script to collect the container's IP address and system metrics.
 
+############# All 3 aboves files are created and available in repository.  ###################
+
 *Step4. Build the Docker image using the Dockerfile:
 
      $docker build -t container-ip-metrics .
@@ -26,3 +28,10 @@ Create a shell script to collect the container's IP address and system metrics.
           or
     http://localhost:8080                        #From local System
 
+---------------------------------------------------------------------------------
+Steps for Verification if needed:
+
+  *Apache Logs: Check the Docker container logs for any errors or warnings:
+
+     $docker logs container-ip-metrics
+  *File Check: Ensure that the "/usr/local/apache2/htdocs/ip" and "/usr/local/apache2/htdocs/metrics" files contain the correct data.
